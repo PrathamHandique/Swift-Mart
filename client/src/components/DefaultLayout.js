@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Layout, Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -9,19 +10,28 @@ import {
   HomeOutlined,
   CopyOutlined,
   UnorderedListOutlined,
+  ShoppingCartOutlined,
 } from "@ant-design/icons";
 import "../styles/DefaultLayout.css";
+import Spinner from "./Spinner";
 const { Header, Sider, Content } = Layout;
 
-const DefaultLayout = ({children}) => {
+const DefaultLayout = ({ children }) => {
+  const navigate = useNavigate();
+  const { cartItems, loading } = useSelector((state) => state.rootReducer);
   const [collapsed, setCollapsed] = useState(false);
 
   const toggle = () => {
     setCollapsed(!collapsed);
   };
+  //to get localstorage data
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   return (
     <Layout>
+      {loading && <Spinner />}
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
           <h1 className="text-center text-light font-wight-bold mt-4">POS</h1>
@@ -43,7 +53,14 @@ const DefaultLayout = ({children}) => {
           <Menu.Item key="/customers" icon={<UserOutlined />}>
             <Link to="/customers">Cutomers</Link>
           </Menu.Item>
-          <Menu.Item key="/logout" icon={<LogoutOutlined />}>
+          <Menu.Item
+            key="/logout"
+            icon={<LogoutOutlined />}
+            onClick={() => {
+              localStorage.removeItem("auth");
+              navigate("/login");
+            }}
+          >
             Logout
           </Menu.Item>
         </Menu>
@@ -57,6 +74,13 @@ const DefaultLayout = ({children}) => {
               onClick: toggle,
             }
           )}
+          <div
+            className="cart-item d-flex jusitfy-content-space-between flex-row"
+            onClick={() => navigate("/cart")}
+          >
+            <p>{cartItems.length}</p>
+            <ShoppingCartOutlined />
+          </div>
         </Header>
         <Content
           className="site-layout-background"

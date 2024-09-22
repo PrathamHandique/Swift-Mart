@@ -1,29 +1,34 @@
-const express=require('express');
-const morgan=require('morgan');
-const bodyParser=require('body-parser');
-const cors=require('cors');
-const dotenv=require('dotenv');
-require('colors');
-const connectDb = require('./config/config');
+const express = require("express");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const dotanv = require("dotenv");
+const { bgCyan } = require("colors");
+require("colors");
+const connectDb = require("./config/config");
 //dotenv config
-dotenv.config();
+dotanv.config();
 //db config
 connectDb();
 //rest object
-const app=express();
+const app = express();
 
-//middlewares
+//middlwares
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(morgan("dev"));
 
 //routes
-app.use('/api/items',require('./routes/itemRoutes'));
+app.use("/api/items", require("./routes/itemRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/bills", require("./routes/billsRoute"));
+
 //port
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
+
 //listen
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`.bgBlue);
+app.listen(PORT, () => {
+  console.log(`Server Running On Port ${PORT}`.bgCyan.white);
 });
