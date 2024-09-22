@@ -15,13 +15,13 @@
 
 
 <h4>Bills Page which can generate invoice,CustomerPage ,CartPage,ItemlistPage</h4>
-<img width="500" height="300" alt="Screenshot 2024-09-22 at 3 10 25 PM" src="https://github.com/user-attachments/assets/1c03641e-bae6-4c73-8f11-347c4a768283">
+<img width="400" height="300" alt="Screenshot 2024-09-22 at 3 10 25 PM" src="https://github.com/user-attachments/assets/1c03641e-bae6-4c73-8f11-347c4a768283">
 
-<img width="500" height="300" alt="Screenshot 2024-09-22 at 3 10 53 PM" src="https://github.com/user-attachments/assets/14dbdd3c-98ed-4b6a-a0ea-36c7a3367f1c">
-
-
-<img width="500" height="300" alt="Screenshot 2024-09-22 at 3 27 45 PM" src="https://github.com/user-attachments/assets/cbdd7d57-3431-44c7-a250-eb289c4db803">
+<img width="400" height="300" alt="Screenshot 2024-09-22 at 3 10 53 PM" src="https://github.com/user-attachments/assets/14dbdd3c-98ed-4b6a-a0ea-36c7a3367f1c">
 
 
-<img width="500" height="300" alt="Screenshot 2024-09-22 at 3 26 58 PM" src="https://github.com/user-attachments/assets/2ce49039-2cf5-4770-b0b5-036ba8da3d4a">
+<img width="400" height="300" alt="Screenshot 2024-09-22 at 3 27 45 PM" src="https://github.com/user-attachments/assets/cbdd7d57-3431-44c7-a250-eb289c4db803">
+
+
+<img width="400" height="300" alt="Screenshot 2024-09-22 at 3 26 58 PM" src="https://github.com/user-attachments/assets/2ce49039-2cf5-4770-b0b5-036ba8da3d4a">
 
